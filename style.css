@@ -30,6 +30,11 @@ li{
     justify-items: center;
 }
 
+.bgNav{
+    background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+}
 
 
 
@@ -38,7 +43,7 @@ li{
 header{
     /*background-color: aquamarine;*/
     padding: 15px 15px;
-    background-color: #B9625D;
+    /*background-color: #B9625D;*/
     position: fixed;
     top: 0;
     left: 0;
@@ -48,4 +53,21 @@ header{
 .navHeader{
     /*background-color: chartreuse;*/
     width: 50%;
+}
+
+ /*hero*/
+
+.hero {
+    height: 100vh;
+}
+.hero img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+.container{
+    /* background-color: #c52626; */
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
 }
