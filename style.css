@@ -1,80 +1,384 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-*{
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: "Inter", "sans-serif";
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
 }
-.spaceBetween{
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Styles */
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+
+#accueil {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#projets, #apropos, #contact {
+    background-color: #f9f9f9;
+}
+#accueil {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.accueil-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.image-container {
+    width: 40%;
+}
+
+.image {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.text-container {
+    width: 50%;
+}
+
+.contact-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-btn:hover {
+    background-color: #444;
+}
+
+/* Social Media Icons */
+.social-media {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-icon:hover {
+    background-color: #444;
+}
+/* Section Mes Projets */
+#projets {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#projets h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.project-box {
+    display: block;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-container {
+    width: 100%;
+    height: 200px;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-title-description h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-title-description p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.project-more-info p {
+    font-size: 1em;
+    color: #007BFF;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.project-box:hover .project-more-info p {
+    text-decoration: underline;
+}
+/* Section À propos de moi */
+#apropos {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#apropos h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Conteneur principal pour la section */
+.apropos-content {
+    display: flex;
+    justify-content: space-between; /* Sépare les deux divs principales */
+    gap: 30px; /* Espacement entre les divs */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petit écran */
+}
+
+/* Style pour la première div (informations personnelles) */
+.personal-info {
+    width: 48%; /* Largeur de la div personnelle */
+    text-align: left;
+}
+
+.personal-info h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.personal-info p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Style pour la deuxième div (compétences et parcours) */
+.skills-parcours {
+    width: 48%; /* Largeur de la div compétences et parcours */
+    text-align: left;
+}
+
+/* Compétences */
+.competences h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.competence-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.competence-list li {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
-.flex {
-    display: flex;
-    flex-wrap: wrap;
+
+.competence-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Parcours */
+.parcours h3 {
+    font-size: 2em;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.parcours-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.parcours-list li {
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .apropos-content {
+        flex-direction: column;
+        align-items: center;
     }
-.alignCenter{
+    .personal-info, .skills-parcours {
+        width: 90%; /* Utilise toute la largeur disponible sur petit écran */
+    }
+}
+/* Section Contact */
+#contact {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Conteneur principal */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Formulaire de contact */
+.contact-form {
+    width: 60%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    text-align: left;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
         align-items: center;
     }
 
-.bold {
-        font-weight: 600;
+    .contact-form {
+        width: 90%; /* Utilise toute la largeur disponible sur petit écran */
     }
- a{
-        text-decoration: none;
-        color: black;
-    }
-li{
-        list-style: none;
-    }
-.center{
-    justify-items: center;
-}
-
-.bgNav{
-    background-color: #0093E9;
-background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-}
-
-.bgProjet {
-    background-color: aqua;
 }
 
 
-
-
-/* HEADER*/
-header{
-    /*background-color: aquamarine;*/
-    padding: 15px 15px;
-    /*background-color: #B9625D;*/
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
     width: 100%;
-}
-.navHeader{
-    /*background-color: chartreuse;*/
-    width: 50%;
-}
-
- /*hero*/
-
-.hero {
-    height: 100vh;
-}
-.hero img{
-    width: 50%;
-    height: 50%;
-    left: 80%;
-}
-.container{
-    /* background-color: #c52626; */
-    max-width: 1000px;
-    width: 100%;
-    margin: auto;
-}
-.projetaille{
-    width:  80%;
-    height: 80%;
 }
